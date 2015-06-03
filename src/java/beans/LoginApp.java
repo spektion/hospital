@@ -40,7 +40,7 @@ public class LoginApp extends HttpServlet {
                 HttpSession session = request.getSession();
                 session.setAttribute("user",user);
                 //dispatcher = getServletContext().getRequestDispatcher("/jsp/Produto.jsp");
-                RequestDispatcher rd = request.getRequestDispatcher("/jsp/Admin.jsp");
+                RequestDispatcher rd = request.getRequestDispatcher("/jsp/Gest.jsp");
                 rd.forward(request, response);
             } else {
                 //dispatcher = getServletContext().getRequestDispatcher("/jsp/ErrorPage.jsp");
