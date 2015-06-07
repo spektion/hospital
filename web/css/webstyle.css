@@ -1,0 +1,45 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jun 7, 2015, 4:00:20 PM
+    Author     : Spek
+*/
+
+
+
+body{
+    text-align: center;
+    margin:0px;
+    background:#FFF;
+
+    
+}
+header {
+    height:150px;
+    background:#FFF;
+    border:1px solid #CCC;
+    width:100%;
+    margin:0px auto;
+    position: fixed;
+}
+#content{
+    width:100%;
+    top:150px;
+    position: relative;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    bottom: 0;
+    font-size: 150%;
+    text-align: left;
+} 
+li {
+    display: inline;
+    
+}

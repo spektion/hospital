@@ -10,11 +10,24 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Login</title>
+        <link rel="stylesheet" type="text/css" href="css/webstyle.css">
     </head>
+   
+
     <body>
+        <header>
+        <ul>
+            <img src="images/logo.jpg" alt="logo" align="left" width="150" height="150">
+            <li><a href="/hospital">Home</a></li>
+            <li><a href="news.asp">News</a></li>
+            <li><a href="contact.asp">Contact</a></li>
+            <li><a href="about.asp">About</a></li>
+        </ul>
+        </header>
+        <div id="content">
         <jsp:useBean id="login" class="beans.LoginApp" scope="session"/>
         <h2>
-            Safari
+            we care!!!
         </h2>
         <h3>
             Faça o login
@@ -24,5 +37,6 @@
                     <input type="submit" value="Login"/>
             </form>
         </h3>
+        </div>
     </body>
 </html>
