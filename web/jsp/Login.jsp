@@ -12,19 +12,22 @@
         <title>Login</title>
         <link rel="stylesheet" type="text/css" href="css/webstyle.css">
     </head>
-   
-
     <body>
         <header>
-        <ul>
-            <img src="images/logo.jpg" alt="logo" align="left" width="150" height="150">
-            <li><a href="/hospital">Home</a></li>
-            <li><a href="news.asp">News</a></li>
-            <li><a href="contact.asp">Contact</a></li>
-            <li><a href="about.asp">About</a></li>
-        </ul>
+            
+            <img src="images/logo.jpg" alt="logo" align="left" width="100" height="100">
+            <p> Hospital Santa Marta </p>
         </header>
+        <div id="menu">
+            <ul>
+            <li><a href="/hospital">Home</a></li>
+           
+            <li><a href="jsp/contact.jsp">Contact</a></li>
+            <li><a href="jsp/about.jsp">About</a></li>
+            </ul>
+        </div>
         <div id="content">
+            
         <jsp:useBean id="login" class="beans.LoginApp" scope="session"/>
         <h2>
             we care!!!

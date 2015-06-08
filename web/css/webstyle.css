@@ -20,24 +20,50 @@ body{
 header {
     height:150px;
     background:#FFF;
-    border:1px solid #CCC;
+    
     width:100%;
     margin:0px auto;
     position: fixed;
+    font-size: 16px;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+#menu{
+    width:100%;
+    top:150px;
+    height:35px;
+    font-size: 16px;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 3px 2px 3px #333333;
+    background-color: #98AFC7;
+   
+    position: fixed;
+}
+#menu a {
+    text-decoration: none;
+    color: #000;
+    padding: 8px 8px 8px 8px;
+}
+#menu a:hover {
+    color: #566D7E;
+    background-color: #6D7B8D;
 }
 #content{
     width:100%;
-    top:150px;
+    top:185px;
     position: relative;
 }
 
 ul {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
     bottom: 0;
-    font-size: 150%;
     text-align: left;
+    height: auto;
+    padding: 8px 0px;
+    margin: 0px;
 } 
 li {
     display: inline;
