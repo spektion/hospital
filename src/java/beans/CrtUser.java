@@ -5,24 +5,25 @@
  */
 package beans;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import java.io.File;
-import javax.servlet.ServletContext;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
-import javax.xml.bind.Unmarshaller;
+import javax.xml.bind.Marshaller;
+
 /**
  *
- * @author Gonçalo Faria
+ * @author Spek
  */
-public class LoginApp extends HttpServlet {
+@WebServlet(name = "CrtUser", urlPatterns = {"/CrtUser"})
+public class CrtUser extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -39,34 +40,32 @@ public class LoginApp extends HttpServlet {
         ServletContext servletContext = getServletContext();
         String path = servletContext.getRealPath("/WEB-INF/");
         File file = new File(path+"/user.xml");
-        PrintWriter out = response.getWriter();
-        try {
-                JAXBContext jaxbContext = JAXBContext.newInstance(User.class);
-
-                Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-                User user = (User) jaxbUnmarshaller.unmarshal(file);
-                System.out.println(user);
-
-                String user_in = request.getParameter("id");
-                String pwd_in = request.getParameter("pwd");
-                if (user_in.equals(user.getName()) && pwd_in.equals(user.getPwd())) {
-                    HttpSession session = request.getSession();
-                    session.setAttribute("user",user);
-                    RequestDispatcher rd = request.getRequestDispatcher("/jsp/Gest.jsp");
-                    rd.forward(request, response);
-                } else {
-                    RequestDispatcher rd = request.getRequestDispatcher("/jsp/LoginError.jsp");
-                    rd.include(request, response);
-                }
-        } catch (NumberFormatException ex) {
-            RequestDispatcher rd = request.getRequestDispatcher("/jsp/LoginError.jsp");
-            rd.include(request, response);
-        }
-        catch (JAXBException e) {
-                e.printStackTrace();
-        }finally{
-            out.close();
-        }
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            
+            
+            User user = new User();
+            user.setId(0);
+            user.setName(request.getParameter("id"));
+            user.setPwd(request.getParameter("pwd"));
+            user.setTipo(request.getParameter("tipe"));
+ 
+            JAXBContext jaxbContext = JAXBContext.newInstance(User.class);
+            Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
+ 
+		// output pretty printed
+	
+            jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+ 
+            jaxbMarshaller.marshal(user, file);
+            jaxbMarshaller.marshal(user, System.out);
+ 
+            out.println("<h1>Utilizador criado</h1>");
+	} catch (JAXBException e) {
+            e.printStackTrace();
+	}
+        
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

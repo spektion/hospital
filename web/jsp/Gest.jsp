@@ -9,21 +9,22 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Home</title>
         <link rel="stylesheet" type="text/css" href="css/webstyle.css">
     </head>
     <body>
         <header>
         <ul>
             <img src="images/logo.jpg" alt="logo" align="left" width="150" height="150">
-            <li><a href="/hospital">Home</a></li>
-            <li><a href="news.asp">News</a></li>
-            <li><a href="contact.asp">Contact</a></li>
-            <li><a href="about.asp">About</a></li>
+            <li><a href="/hospital/Gest.jsp">Home</a></li>
+            <li><a href="jsp/AddUser.jsp">Novo User</a></li>
+            <li><a href="contact.jsp">Contact</a></li>
+            <li><a href="about.jsp">About</a></li>
         </ul>
         </header>
         <div id="content">
-        <h1>Hello World!</h1>
+        
+        
         </div>
     </body>
 </html>

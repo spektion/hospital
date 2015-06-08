@@ -7,22 +7,18 @@ package beans;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import java.io.File;
-import javax.servlet.ServletContext;
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Unmarshaller;
+
 /**
  *
- * @author Gonçalo Faria
+ * @author Spek
  */
-public class LoginApp extends HttpServlet {
+@WebServlet(name = "ListaUser", urlPatterns = {"/ListaUser"})
+public class ListaUser extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,36 +32,17 @@ public class LoginApp extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        ServletContext servletContext = getServletContext();
-        String path = servletContext.getRealPath("/WEB-INF/");
-        File file = new File(path+"/user.xml");
-        PrintWriter out = response.getWriter();
-        try {
-                JAXBContext jaxbContext = JAXBContext.newInstance(User.class);
-
-                Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-                User user = (User) jaxbUnmarshaller.unmarshal(file);
-                System.out.println(user);
-
-                String user_in = request.getParameter("id");
-                String pwd_in = request.getParameter("pwd");
-                if (user_in.equals(user.getName()) && pwd_in.equals(user.getPwd())) {
-                    HttpSession session = request.getSession();
-                    session.setAttribute("user",user);
-                    RequestDispatcher rd = request.getRequestDispatcher("/jsp/Gest.jsp");
-                    rd.forward(request, response);
-                } else {
-                    RequestDispatcher rd = request.getRequestDispatcher("/jsp/LoginError.jsp");
-                    rd.include(request, response);
-                }
-        } catch (NumberFormatException ex) {
-            RequestDispatcher rd = request.getRequestDispatcher("/jsp/LoginError.jsp");
-            rd.include(request, response);
-        }
-        catch (JAXBException e) {
-                e.printStackTrace();
-        }finally{
-            out.close();
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet ListaUser</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet ListaUser at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
         }
     }
 
