@@ -22,8 +22,8 @@
             <ul>
             <li><a href="jsp/Gest.jsp">Home</a></li>
             <li><a href="jsp/AddUser.jsp">Novo User</a></li>
-            <li><a href="contact.jsp">Contact</a></li>
-            <li><a href="about.jsp">About</a></li>
+            <li><a href="Contact">Contact</a></li>
+            <li><a href="About">About</a></li>
             </ul>
         </div>
         <div id="content">

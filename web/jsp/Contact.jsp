@@ -10,20 +10,20 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <link rel="stylesheet" type="text/css" href="../css/webstyle.css">
+        <link rel="stylesheet" type="text/css" href="css/webstyle.css">
     </head>
     <body>
         <header>
             <p></p>
-            <img src="../images/logo.jpg" alt="logo" align="left" width="100" height="100">
+            <img src="images/logo.jpg" alt="logo" align="left" width="100" height="100">
         <p> Hospital Santa Marta </p>
         </header>
         <div id="menu">
             <ul>
             <li><a href="/hospital">Home</a></li>
 
-            <li><a href="contact.jsp">Contact</a></li>
-            <li><a href="about.jsp">About</a></li>
+            <li><a href="Contact">Contact</a></li>
+            <li><a href="About">About</a></li>
             </ul>
         </div>
         <div id="content">

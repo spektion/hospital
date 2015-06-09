@@ -22,8 +22,8 @@
             <ul>
             <li><a href="/hospital">Home</a></li>
            
-            <li><a href="jsp/contact.jsp">Contact</a></li>
-            <li><a href="jsp/about.jsp">About</a></li>
+            <li><a href="Contact">Contact</a></li>
+            <li><a href="About">About</a></li>
             </ul>
         </div>
         <div id="content">

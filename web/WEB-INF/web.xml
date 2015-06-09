@@ -4,9 +4,33 @@
         <servlet-name>LoginApp</servlet-name>
         <servlet-class>beans.LoginApp</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>About</servlet-name>
+        <jsp-file>/jsp/About.jsp</jsp-file>
+    </servlet>
+    <servlet>
+        <servlet-name>Contact</servlet-name>
+        <jsp-file>/jsp/Contact.jsp</jsp-file>
+    </servlet>
+    <servlet>
+        <servlet-name>Home</servlet-name>
+        <servlet-class>beans.Home</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginApp</servlet-name>
         <url-pattern>/LoginApp</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Home</servlet-name>
+        <url-pattern>/Home</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>About</servlet-name>
+        <url-pattern>/About/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Contact</servlet-name>
+        <url-pattern>/Contact/*</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
