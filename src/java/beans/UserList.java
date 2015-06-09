@@ -11,8 +11,7 @@ import javax.xml.bind.annotation.*;
  *
  * @author Gonçalo Faria
  */
-@XmlRootElement
-public class User {
+public class UserList {
     private String name;
     private String pwd;
     private int id;

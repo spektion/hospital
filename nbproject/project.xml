@@ -6,12 +6,7 @@
             <name>hospital</name>
             <minimum-ant-version>1.6.5</minimum-ant-version>
             <web-module-libraries/>
-            <web-module-additional-libraries>
-                <library dirs="200">
-                    <file>${file.reference.web-data}</file>
-                    <path-in-war>/</path-in-war>
-                </library>
-            </web-module-additional-libraries>
+            <web-module-additional-libraries/>
             <source-roots>
                 <root id="src.dir"/>
             </source-roots>

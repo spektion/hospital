@@ -41,10 +41,10 @@ public class LoginApp extends HttpServlet {
         File file = new File(path+"/user.xml");
         PrintWriter out = response.getWriter();
         try {
-                JAXBContext jaxbContext = JAXBContext.newInstance(User.class);
+                JAXBContext jaxbContext = JAXBContext.newInstance(UserList.class);
 
                 Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-                User user = (User) jaxbUnmarshaller.unmarshal(file);
+                UserList user = (UserList) jaxbUnmarshaller.unmarshal(file);
                 System.out.println(user);
 
                 String user_in = request.getParameter("id");

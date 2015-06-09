@@ -44,13 +44,13 @@ public class CrtUser extends HttpServlet {
             /* TODO output your page here. You may use following sample code. */
             
             
-            User user = new User();
+            UserList user = new UserList();
             user.setId(0);
             user.setName(request.getParameter("id"));
             user.setPwd(request.getParameter("pwd"));
             user.setTipo(request.getParameter("tipe"));
  
-            JAXBContext jaxbContext = JAXBContext.newInstance(User.class);
+            JAXBContext jaxbContext = JAXBContext.newInstance(UserList.class);
             Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
  
 		// output pretty printed
