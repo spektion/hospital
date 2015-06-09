@@ -5,11 +5,11 @@
         <servlet-class>beans.LoginApp</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>About</servlet-name>
-        <jsp-file>/jsp/About.jsp</jsp-file>
+        <servlet-name>Acerca</servlet-name>
+        <jsp-file>/jsp/Acerca.jsp</jsp-file>
     </servlet>
     <servlet>
-        <servlet-name>Contact</servlet-name>
+        <servlet-name>Contactos</servlet-name>
         <jsp-file>/jsp/Contact.jsp</jsp-file>
     </servlet>
     <servlet>
@@ -25,12 +25,12 @@
         <url-pattern>/Home</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>About</servlet-name>
-        <url-pattern>/About/*</url-pattern>
+        <servlet-name>Acerca</servlet-name>
+        <url-pattern>/Acerca/*</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>Contact</servlet-name>
-        <url-pattern>/Contact/*</url-pattern>
+        <servlet-name>Contactos</servlet-name>
+        <url-pattern>/Contactos/*</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
