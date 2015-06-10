@@ -11,6 +11,7 @@ import javax.xml.bind.annotation.*;
  *
  * @author Gonçalo Faria
  */
+
 @XmlRootElement
 public class User {
     private String name;
@@ -18,6 +19,9 @@ public class User {
     private int id;
     private String tipo;
 
+    public User(){
+        id++;
+    }
     /**
      * @return the name
      */

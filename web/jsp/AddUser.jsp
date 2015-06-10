@@ -10,7 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Add User</title>
-        <link rel="stylesheet" type="text/css" href="../css/webstyle.css">
+        <link rel="stylesheet" type="text/css" href="css/webstyle.css">
     </head>
     <body>
         <header>
@@ -21,7 +21,7 @@
         <div id="menu">
             <ul>
             <li><a href="/hospital/Gest.jsp">Home</a></li>
-            <li><a href="jsp/AddUser.jsp">Novo User</a></li>
+            <li><a href="AddUser">Novo User</a></li>
             <li><a href="Contactos">Contactos</a></li>
             <li><a href="Acerca">Acerca</a></li>
             </ul>

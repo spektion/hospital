@@ -38,11 +38,11 @@ public class LoginApp extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         ServletContext servletContext = getServletContext();
         String path = servletContext.getRealPath("/WEB-INF/");
-        System.out.println(path);
-        File file = new File(path+"/user.xml");
+        
         
         try (PrintWriter out = response.getWriter()) {
-            System.out.println(file);
+            
+                File file = new File(path+"/"+request.getParameter("id")+"user.xml");
                 JAXBContext jaxbContext = JAXBContext.newInstance(User.class);
 
                 Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();

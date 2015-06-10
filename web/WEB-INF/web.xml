@@ -5,6 +5,14 @@
         <servlet-class>beans.LoginApp</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>CrtUser</servlet-name>
+        <servlet-class>beans.CrtUser</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Home</servlet-name>
+        <jsp-file>/jsp/Gest.jsp</jsp-file>
+    </servlet>
+    <servlet>
         <servlet-name>Acerca</servlet-name>
         <jsp-file>/jsp/Acerca.jsp</jsp-file>
     </servlet>
@@ -13,16 +21,20 @@
         <jsp-file>/jsp/Contact.jsp</jsp-file>
     </servlet>
     <servlet>
-        <servlet-name>Home</servlet-name>
-        <servlet-class>beans.Home</servlet-class>
+        <servlet-name>AddUser</servlet-name>
+        <jsp-file>/jsp/AddUser.jsp</jsp-file>
+    </servlet>
+    <servlet>
+        <servlet-name>LstQuartos</servlet-name>
+        <servlet-class>beans.LstQuartos</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>LoginApp</servlet-name>
         <url-pattern>/LoginApp</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>Home</servlet-name>
-        <url-pattern>/Home</url-pattern>
+        <servlet-name>CrtUser</servlet-name>
+        <url-pattern>/CrtUser</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>Acerca</servlet-name>
@@ -31,6 +43,18 @@
     <servlet-mapping>
         <servlet-name>Contactos</servlet-name>
         <url-pattern>/Contactos/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddUser</servlet-name>
+        <url-pattern>/AddUser/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Home</servlet-name>
+        <url-pattern>/Home/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LstQuartos</servlet-name>
+        <url-pattern>/LstQuartos</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

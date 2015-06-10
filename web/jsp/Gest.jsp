@@ -20,8 +20,9 @@
         </header>
         <div id="menu">
             <ul>
-            <li><a href="jsp/Gest.jsp">Home</a></li>
-            <li><a href="jsp/AddUser.jsp">Novo User</a></li>
+            <li><a href="Home">Home</a></li>
+            <li><a href="AddUser">Novo User</a></li>
+            <!--<li><a href="LstQuartos">Lista de quartos</a></li> -->
             <li><a href="Contactos">Contactos</a></li>
             <li><a href="Acerca">Acerca</a></li>
             </ul>

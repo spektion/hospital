@@ -8,6 +8,7 @@ package beans;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -39,17 +40,17 @@ public class CrtUser extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         ServletContext servletContext = getServletContext();
         String path = servletContext.getRealPath("/WEB-INF/");
-        File file = new File(path+"/user.xml");
+        
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             
             
             User user = new User();
-            user.setId(0);
             user.setName(request.getParameter("id"));
             user.setPwd(request.getParameter("pwd"));
             user.setTipo(request.getParameter("tipe"));
  
+            File file = new File(path+"/"+request.getParameter("id")+"user.xml");
             JAXBContext jaxbContext = JAXBContext.newInstance(User.class);
             Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
  
@@ -61,6 +62,8 @@ public class CrtUser extends HttpServlet {
             jaxbMarshaller.marshal(user, System.out);
  
             out.println("<h1>Utilizador criado</h1>");
+            RequestDispatcher rd = request.getRequestDispatcher("Home");
+            rd.forward(request, response);
 	} catch (JAXBException e) {
             e.printStackTrace();
 	}
