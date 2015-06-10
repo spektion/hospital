@@ -38,20 +38,22 @@ public class LoginApp extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         ServletContext servletContext = getServletContext();
         String path = servletContext.getRealPath("/WEB-INF/");
+        System.out.println(path);
         File file = new File(path+"/user.xml");
-        PrintWriter out = response.getWriter();
-        try {
-                JAXBContext jaxbContext = JAXBContext.newInstance(UserList.class);
+        
+        try (PrintWriter out = response.getWriter()) {
+            System.out.println(file);
+                JAXBContext jaxbContext = JAXBContext.newInstance(User.class);
 
                 Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-                UserList user = (UserList) jaxbUnmarshaller.unmarshal(file);
-                System.out.println(user);
+                User user = (User) jaxbUnmarshaller.unmarshal(file);
+                //System.out.println(user);
 
                 String user_in = request.getParameter("id");
                 String pwd_in = request.getParameter("pwd");
                 if (user_in.equals(user.getName()) && pwd_in.equals(user.getPwd())) {
                     HttpSession session = request.getSession();
-                    session.setAttribute("user",user);
+                    session.setAttribute("User",user);
                     RequestDispatcher rd = request.getRequestDispatcher("/jsp/Gest.jsp");
                     rd.forward(request, response);
                 } else {
@@ -64,8 +66,6 @@ public class LoginApp extends HttpServlet {
         }
         catch (JAXBException e) {
                 e.printStackTrace();
-        }finally{
-            out.close();
         }
     }
 
