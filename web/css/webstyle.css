@@ -69,3 +69,9 @@ li {
     display: inline;
     
 }
+li + li:before {
+    content: " | ";
+}
+li:last-child { 
+    float:right; 
+}

@@ -13,6 +13,10 @@
         <jsp-file>/jsp/Gest.jsp</jsp-file>
     </servlet>
     <servlet>
+        <servlet-name>Logout</servlet-name>
+        <jsp-file>/jsp/Logout.jsp</jsp-file>
+    </servlet>
+    <servlet>
         <servlet-name>Acerca</servlet-name>
         <jsp-file>/jsp/Acerca.jsp</jsp-file>
     </servlet>
@@ -27,6 +31,10 @@
     <servlet>
         <servlet-name>LstQuartos</servlet-name>
         <servlet-class>beans.LstQuartos</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Session</servlet-name>
+        <servlet-class>beans.Session</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>LoginApp</servlet-name>
@@ -53,8 +61,16 @@
         <url-pattern>/Home/*</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+        <servlet-name>Logout</servlet-name>
+        <url-pattern>/Logout/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>LstQuartos</servlet-name>
         <url-pattern>/LstQuartos</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Session</servlet-name>
+        <url-pattern>/Session</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

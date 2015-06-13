@@ -13,17 +13,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.io.File;
-import java.io.FileNotFoundException;
-import javax.servlet.ServletContext;
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Unmarshaller;
+
 /**
  *
- * @author Gonçalo Faria
+ * @author Spek
  */
-public class LoginApp extends HttpServlet {
+public class Session extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,47 +30,16 @@ public class LoginApp extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException, FileNotFoundException {
+            throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        ServletContext servletContext = getServletContext();
-        String path = servletContext.getRealPath("/WEB-INF/");
         
+        HttpSession session=request.getSession(false);
         
         try (PrintWriter out = response.getWriter()) {
-            
-                File file = new File(path+"/users/"+request.getParameter("id")+"user.xml");
-                if(!file.isFile()){
-                    RequestDispatcher rd = request.getRequestDispatcher("/jsp/LoginError.jsp");
-                    rd.include(request, response);
-                }
-                JAXBContext jaxbContext = JAXBContext.newInstance(User.class);
-
-                Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-                User user = (User) jaxbUnmarshaller.unmarshal(file);
-                //System.out.println(user);
-
-                String user_in = request.getParameter("id");
-                String pwd_in = request.getParameter("pwd");
-                if (user_in.equals(user.getName()) && pwd_in.equals(user.getPwd())) {
-                    HttpSession session = request.getSession();
-                    session.setAttribute("User",user);
-                    session.setAttribute("Tipo",user.getTipo());
-                    RequestDispatcher rd = request.getRequestDispatcher("Home");
-                    rd.forward(request, response);
-                } else {
-                    RequestDispatcher rd = request.getRequestDispatcher("/jsp/LoginError.jsp");
-                    rd.include(request, response);
-                }
-        } catch (NumberFormatException ex) {
-            RequestDispatcher rd = request.getRequestDispatcher("/jsp/LoginError.jsp");
-            rd.include(request, response);
-        }
-        catch (FileNotFoundException e) {
-            RequestDispatcher rd = request.getRequestDispatcher("/jsp/LoginError.jsp");
-            rd.include(request, response);
-        }
-        catch (JAXBException e) {
-                e.printStackTrace();
+            if(session!=null){
+                RequestDispatcher rd = request.getRequestDispatcher("Home");
+                rd.forward(request, response);
+            }
         }
     }
 

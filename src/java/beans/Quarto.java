@@ -13,6 +13,7 @@ public class Quarto {
     private int andar;
     private String porta;
     private String cama;
+    private int visitNum;
 
     /**
      * @return the andar
@@ -54,6 +55,20 @@ public class Quarto {
      */
     public void setCama(String cama) {
         this.cama = cama;
+    }
+
+    /**
+     * @return the VisitNum
+     */
+    public int getvisitNum() {
+        return visitNum;
+    }
+
+    /**
+     * @param VisitNum the VisitNum to set
+     */
+    public void setvisitNum(int visitNum) {
+        this.visitNum = visitNum;
     }
     
 }

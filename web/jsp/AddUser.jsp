@@ -20,7 +20,7 @@
         </header>
         <div id="menu">
             <ul>
-            <li><a href="/hospital/Gest.jsp">Home</a></li>
+            <li><a href="Home">Home</a></li>
             <li><a href="AddUser">Novo User</a></li>
             <li><a href="Contactos">Contactos</a></li>
             <li><a href="Acerca">Acerca</a></li>
@@ -31,9 +31,10 @@
         <jsp:useBean id="CrtUser" class="beans.CrtUser" scope="session"/>
         <form method="post" action="CrtUser">
             <p>Utilizador: <input type="text" name="id" size="6"/>   password: <input type="password" name="pwd" size="6"/>
-            <p>tipo:    <select>
-                        <option value="Admin">Administrativo</option>
-                        <option value="Enfermeiro">Enfermeiro</option>
+            <p>tipo:    <select name="tipe">
+                        <option value="admin">Administração</option>
+                        <option value="enf">Enfermeiro</option>
+                        <option value="recep">Recepção</option>
                         </select> 
                 <input type="submit" value="Criar"/>
         </form>
