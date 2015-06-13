@@ -42,7 +42,7 @@ public class LoginApp extends HttpServlet {
         
         try (PrintWriter out = response.getWriter()) {
             
-                File file = new File(path+"/"+request.getParameter("id")+"user.xml");
+                File file = new File(path+"/users/"+request.getParameter("id")+"user.xml");
                 JAXBContext jaxbContext = JAXBContext.newInstance(User.class);
 
                 Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();

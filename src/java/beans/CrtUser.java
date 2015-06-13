@@ -50,7 +50,7 @@ public class CrtUser extends HttpServlet {
             user.setPwd(request.getParameter("pwd"));
             user.setTipo(request.getParameter("tipe"));
  
-            File file = new File(path+"/"+request.getParameter("id")+"user.xml");
+            File file = new File(path+"/users/"+request.getParameter("id")+"user.xml");
             JAXBContext jaxbContext = JAXBContext.newInstance(User.class);
             Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
  
