@@ -32,9 +32,9 @@
         <form method="post" action="CrtUser">
             <p>Utilizador: <input type="text" name="id" size="6"/>   password: <input type="password" name="pwd" size="6"/>
             <p>tipo:    <select name="tipe">
-                        <option value="admin">Administração</option>
                         <option value="enf">Enfermeiro</option>
                         <option value="recep">Recepção</option>
+                        <option value="admin">Administração</option>
                         </select> 
                 <input type="submit" value="Criar"/>
         </form>

@@ -55,7 +55,420 @@
             </ul>
         </div>
         <div id="content">
-        
+            <p></p>
+            <table class="center" id="t01">
+                <tr>
+                    <th colspan="2">Andar</th>
+                    <th colspan="4">Quarto A</th>		
+                    <th colspan="4">Quarto B</th>
+                    <th colspan="4">Quarto C</th>
+                    <th colspan="4">Quarto D</th>
+                    <th colspan="4">Quarto E</th>
+                    <th colspan="4">Quarto F</th>
+                </tr>
+                <tr>
+                    <td rowspan="2">6</td>
+                    <td>Cama</td>
+                    <!-- quarto A -->
+                    <td>I</td>		
+                    <td>II</td>
+                    <td>III</td>		
+                    <td>IV</td>
+                    <!-- quarto B -->
+                    <td>I</td>		
+                    <td>II</td>
+                    <td>III</td>		
+                    <td>IV</td>
+                    <!-- quarto C -->
+                    <td>I</td>		
+                    <td>II</td>
+                    <td>III</td>		
+                    <td>IV</td>
+                    <!-- quarto D -->
+                    <td>I</td>		
+                    <td>II</td>
+                    <td>III</td>		
+                    <td>IV</td>
+                    <!-- quarto E -->
+                    <td>I</td>		
+                    <td>II</td>
+                    <td>III</td>		
+                    <td>IV</td>
+                    <!-- quarto F -->
+                    <td>I</td>		
+                    <td>II</td>
+                    <td>III</td>		
+                    <td>IV</td>
+                </tr>
+                <tr>
+                    <td>Paciente</td>
+                    <!-- quarto A -->
+                    <td></td>		
+                    <td></td>
+                    <td></td>		
+                    <td></td>
+                    <!-- quarto B -->
+                    <td></td>		
+                    <td></td>
+                    <td></td>		
+                    <td></td>
+                    <!-- quarto C -->
+                    <td></td>		
+                    <td></td>
+                    <td></td>		
+                    <td></td>
+                    <!-- quarto D -->
+                    <td></td>		
+                    <td></td>
+                    <td></td>		
+                    <td></td>
+                    <!-- quarto E -->
+                    <td></td>		
+                    <td></td>
+                    <td></td>		
+                    <td></td>
+                    <!-- quarto F -->
+                    <td></td>		
+                    <td></td>
+                    <td></td>		
+                    <td></td>
+                </tr>
+                <tr>
+                    <td rowspan="2">5</td>
+                    <td>Cama</td>
+                    <!-- quarto A -->
+                    <td>I</td>		
+                    <td>II</td>
+                    <td>III</td>		
+                    <td>IV</td>
+                    <!-- quarto B -->
+                    <td>I</td>		
+                    <td>II</td>
+                    <td>III</td>		
+                    <td>IV</td>
+                    <!-- quarto C -->
+                    <td>I</td>		
+                    <td>II</td>
+                    <td>III</td>		
+                    <td>IV</td>
+                    <!-- quarto D -->
+                    <td>I</td>		
+                    <td>II</td>
+                    <td>III</td>		
+                    <td>IV</td>
+                    <!-- quarto E -->
+                    <td>I</td>		
+                    <td>II</td>
+                    <td>III</td>		
+                    <td>IV</td>
+                    <!-- quarto F -->
+                    <td>I</td>		
+                    <td>II</td>
+                    <td>III</td>		
+                    <td>IV</td>
+                </tr>
+                <tr>
+                    <td>Paciente</td>
+                    <!-- quarto A -->
+                    <td></td>		
+                    <td></td>
+                    <td></td>		
+                    <td></td>
+                    <!-- quarto B -->
+                    <td></td>		
+                    <td></td>
+                    <td></td>		
+                    <td></td>
+                    <!-- quarto C -->
+                    <td></td>		
+                    <td></td>
+                    <td></td>		
+                    <td></td>
+                    <!-- quarto D -->
+                    <td></td>		
+                    <td></td>
+                    <td></td>		
+                    <td></td>
+                    <!-- quarto E -->
+                    <td></td>		
+                    <td></td>
+                    <td></td>		
+                    <td></td>
+                    <!-- quarto F -->
+                    <td></td>		
+                    <td></td>
+                    <td></td>		
+                    <td></td>
+                </tr>
+                <tr>
+                    <td rowspan="2">4</td>
+                    <td>Cama</td>
+                    <!-- quarto A -->
+                    <td>I</td>		
+                    <td>II</td>
+                    <td>III</td>		
+                    <td>IV</td>
+                    <!-- quarto B -->
+                    <td>I</td>		
+                    <td>II</td>
+                    <td>III</td>		
+                    <td>IV</td>
+                    <!-- quarto C -->
+                    <td>I</td>		
+                    <td>II</td>
+                    <td>III</td>		
+                    <td>IV</td>
+                    <!-- quarto D -->
+                    <td>I</td>		
+                    <td>II</td>
+                    <td>III</td>		
+                    <td>IV</td>
+                    <!-- quarto E -->
+                    <td>I</td>		
+                    <td>II</td>
+                    <td>III</td>		
+                    <td>IV</td>
+                    <!-- quarto F -->
+                    <td>I</td>		
+                    <td>II</td>
+                    <td>III</td>		
+                    <td>IV</td>
+                </tr>
+                <tr>
+                    <td>Paciente</td>
+                    <!-- quarto A -->
+                    <td></td>		
+                    <td></td>
+                    <td></td>		
+                    <td></td>
+                    <!-- quarto B -->
+                    <td></td>		
+                    <td></td>
+                    <td></td>		
+                    <td></td>
+                    <!-- quarto C -->
+                    <td></td>		
+                    <td></td>
+                    <td></td>		
+                    <td></td>
+                    <!-- quarto D -->
+                    <td></td>		
+                    <td></td>
+                    <td></td>		
+                    <td></td>
+                    <!-- quarto E -->
+                    <td></td>		
+                    <td></td>
+                    <td></td>		
+                    <td></td>
+                    <!-- quarto F -->
+                    <td></td>		
+                    <td></td>
+                    <td></td>		
+                    <td></td>
+                </tr>
+                <tr>
+                    <td rowspan="2">3</td>
+                    <td>Cama</td>
+                    <!-- quarto A -->
+                    <td>I</td>		
+                    <td>II</td>
+                    <td>III</td>		
+                    <td>IV</td>
+                    <!-- quarto B -->
+                    <td>I</td>		
+                    <td>II</td>
+                    <td>III</td>		
+                    <td>IV</td>
+                    <!-- quarto C -->
+                    <td>I</td>		
+                    <td>II</td>
+                    <td>III</td>		
+                    <td>IV</td>
+                    <!-- quarto D -->
+                    <td>I</td>		
+                    <td>II</td>
+                    <td>III</td>		
+                    <td>IV</td>
+                    <!-- quarto E -->
+                    <td>I</td>		
+                    <td>II</td>
+                    <td>III</td>		
+                    <td>IV</td>
+                    <!-- quarto F -->
+                    <td>I</td>		
+                    <td>II</td>
+                    <td>III</td>		
+                    <td>IV</td>
+                </tr>
+                <tr>
+                    <td>Paciente</td>
+                    <!-- quarto A -->
+                    <td></td>		
+                    <td></td>
+                    <td></td>		
+                    <td></td>
+                    <!-- quarto B -->
+                    <td></td>		
+                    <td></td>
+                    <td></td>		
+                    <td></td>
+                    <!-- quarto C -->
+                    <td></td>		
+                    <td></td>
+                    <td></td>		
+                    <td></td>
+                    <!-- quarto D -->
+                    <td></td>		
+                    <td></td>
+                    <td></td>		
+                    <td></td>
+                    <!-- quarto E -->
+                    <td></td>		
+                    <td></td>
+                    <td></td>		
+                    <td></td>
+                    <!-- quarto F -->
+                    <td></td>		
+                    <td></td>
+                    <td></td>		
+                    <td></td>
+                </tr>
+                <tr>
+                    <td rowspan="2">2</td>
+                    <td>Cama</td>
+                    <!-- quarto A -->
+                    <td>I</td>		
+                    <td>II</td>
+                    <td>III</td>		
+                    <td>IV</td>
+                    <!-- quarto B -->
+                    <td>I</td>		
+                    <td>II</td>
+                    <td>III</td>		
+                    <td>IV</td>
+                    <!-- quarto C -->
+                    <td>I</td>		
+                    <td>II</td>
+                    <td>III</td>		
+                    <td>IV</td>
+                    <!-- quarto D -->
+                    <td>I</td>		
+                    <td>II</td>
+                    <td>III</td>		
+                    <td>IV</td>
+                    <!-- quarto E -->
+                    <td>I</td>		
+                    <td>II</td>
+                    <td>III</td>		
+                    <td>IV</td>
+                    <!-- quarto F -->
+                    <td>I</td>		
+                    <td>II</td>
+                    <td>III</td>		
+                    <td>IV</td>
+                </tr>
+                <tr>
+                    <td>Paciente</td>
+                    <!-- quarto A -->
+                    <td></td>		
+                    <td></td>
+                    <td></td>		
+                    <td></td>
+                    <!-- quarto B -->
+                    <td></td>		
+                    <td></td>
+                    <td></td>		
+                    <td></td>
+                    <!-- quarto C -->
+                    <td></td>		
+                    <td></td>
+                    <td></td>		
+                    <td></td>
+                    <!-- quarto D -->
+                    <td></td>		
+                    <td></td>
+                    <td></td>		
+                    <td></td>
+                    <!-- quarto E -->
+                    <td></td>		
+                    <td></td>
+                    <td></td>		
+                    <td></td>
+                    <!-- quarto F -->
+                    <td></td>		
+                    <td></td>
+                    <td></td>		
+                    <td></td>
+                </tr>
+                <tr>
+                    <td rowspan="2">1</td>
+                    <td>Cama</td>
+                    <!-- quarto A -->
+                    <td>I</td>		
+                    <td>II</td>
+                    <td>III</td>		
+                    <td>IV</td>
+                    <!-- quarto B -->
+                    <td>I</td>		
+                    <td>II</td>
+                    <td>III</td>		
+                    <td>IV</td>
+                    <!-- quarto C -->
+                    <td>I</td>		
+                    <td>II</td>
+                    <td>III</td>		
+                    <td>IV</td>
+                    <!-- quarto D -->
+                    <td>I</td>		
+                    <td>II</td>
+                    <td>III</td>		
+                    <td>IV</td>
+                    <!-- quarto E -->
+                    <td>I</td>		
+                    <td>II</td>
+                    <td>III</td>		
+                    <td>IV</td>
+                    <!-- quarto F -->
+                    <td>I</td>		
+                    <td>II</td>
+                    <td>III</td>		
+                    <td>IV</td>
+                </tr>
+                <tr>
+                    <td>Paciente</td>
+                    <!-- quarto A -->
+                    <td></td>		
+                    <td></td>
+                    <td></td>		
+                    <td></td>
+                    <!-- quarto B -->
+                    <td></td>		
+                    <td></td>
+                    <td></td>		
+                    <td></td>
+                    <!-- quarto C -->
+                    <td></td>		
+                    <td></td>
+                    <td></td>		
+                    <td></td>
+                    <!-- quarto D -->
+                    <td></td>		
+                    <td></td>
+                    <td></td>		
+                    <td></td>
+                    <!-- quarto E -->
+                    <td></td>		
+                    <td></td>
+                    <td></td>		
+                    <td></td>
+                    <!-- quarto F -->
+                    <td></td>		
+                    <td></td>
+                    <td></td>		
+                    <td></td>
+                </tr>
+            </table>
         
         </div>
     </body>

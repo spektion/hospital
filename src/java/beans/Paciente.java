@@ -16,6 +16,8 @@ public class Paciente {
     private int idade;
     private String doenca;
     private Quarto quarto;
+    private int visitNum;
+    private boolean visitas;
 
     /**
      * @return the id
@@ -85,6 +87,34 @@ public class Paciente {
      */
     public void setQuarto(Quarto quarto) {
         this.quarto = quarto;
+    }
+
+    /**
+     * @return the visitNum
+     */
+    public int getVisitNum() {
+        return visitNum;
+    }
+
+    /**
+     * @param visitNum the visitNum to set
+     */
+    public void setVisitNum(int visitNum) {
+        this.visitNum = visitNum;
+    }
+
+    /**
+     * @return the visitas
+     */
+    public boolean isVisitas() {
+        return visitas;
+    }
+
+    /**
+     * @param visitas the visitas to set
+     */
+    public void setVisitas(boolean visitas) {
+        this.visitas = visitas;
     }
     
     
