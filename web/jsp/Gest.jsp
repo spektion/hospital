@@ -5,6 +5,10 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"session="false"%>
+<%@ page import="java.io.*,java.util.*,java.sql.*"%>
+<%@ page import="javax.servlet.http.*,javax.servlet.*" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -55,6 +59,11 @@
             </ul>
         </div>
         <div id="content">
+            <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost:3306/hospital" user="root"  password="root"/>
+ 
+            <sql:query dataSource="${snapshot}" var="result">
+                SELECT * FROM Pacientes;
+            </sql:query>
             <p></p>
             <table class="center" id="t01">
                 <tr>
@@ -102,36 +111,18 @@
                 </tr>
                 <tr>
                     <td>Paciente</td>
-                    <!-- quarto A -->
-                    <td></td>		
-                    <td></td>
-                    <td></td>		
-                    <td></td>
-                    <!-- quarto B -->
-                    <td></td>		
-                    <td></td>
-                    <td></td>		
-                    <td></td>
-                    <!-- quarto C -->
-                    <td></td>		
-                    <td></td>
-                    <td></td>		
-                    <td></td>
-                    <!-- quarto D -->
-                    <td></td>		
-                    <td></td>
-                    <td></td>		
-                    <td></td>
-                    <!-- quarto E -->
-                    <td></td>		
-                    <td></td>
-                    <td></td>		
-                    <td></td>
-                    <!-- quarto F -->
-                    <td></td>		
-                    <td></td>
-                    <td></td>		
-                    <td></td>
+                    <% for(int i=121; i <= 144; i++) { %>
+                    <c:set var="i" value="<%=i%>"/>
+                    <td>
+                        <c:forEach var="row" items="${result.rows}">  
+                        <c:choose>
+                            <c:when test = "${row.id_qt eq i}">
+                            nome:<c:out value="${row.nome}"/>
+                            </c:when>
+                        </c:choose>
+                        </c:forEach>
+                    </td>
+                    <% } %>
                 </tr>
                 <tr>
                     <td rowspan="2">5</td>
@@ -169,36 +160,18 @@
                 </tr>
                 <tr>
                     <td>Paciente</td>
-                    <!-- quarto A -->
-                    <td></td>		
-                    <td></td>
-                    <td></td>		
-                    <td></td>
-                    <!-- quarto B -->
-                    <td></td>		
-                    <td></td>
-                    <td></td>		
-                    <td></td>
-                    <!-- quarto C -->
-                    <td></td>		
-                    <td></td>
-                    <td></td>		
-                    <td></td>
-                    <!-- quarto D -->
-                    <td></td>		
-                    <td></td>
-                    <td></td>		
-                    <td></td>
-                    <!-- quarto E -->
-                    <td></td>		
-                    <td></td>
-                    <td></td>		
-                    <td></td>
-                    <!-- quarto F -->
-                    <td></td>		
-                    <td></td>
-                    <td></td>		
-                    <td></td>
+                    <% for(int i=97; i <= 120; i++) { %>
+                    <c:set var="i" value="<%=i%>"/>
+                    <td>
+                        <c:forEach var="row" items="${result.rows}">  
+                        <c:choose>
+                            <c:when test = "${row.id_qt eq i}">
+                            nome:<c:out value="${row.nome}"/>
+                            </c:when>
+                        </c:choose>
+                        </c:forEach>
+                    </td>
+                    <% } %>
                 </tr>
                 <tr>
                     <td rowspan="2">4</td>
@@ -236,36 +209,18 @@
                 </tr>
                 <tr>
                     <td>Paciente</td>
-                    <!-- quarto A -->
-                    <td></td>		
-                    <td></td>
-                    <td></td>		
-                    <td></td>
-                    <!-- quarto B -->
-                    <td></td>		
-                    <td></td>
-                    <td></td>		
-                    <td></td>
-                    <!-- quarto C -->
-                    <td></td>		
-                    <td></td>
-                    <td></td>		
-                    <td></td>
-                    <!-- quarto D -->
-                    <td></td>		
-                    <td></td>
-                    <td></td>		
-                    <td></td>
-                    <!-- quarto E -->
-                    <td></td>		
-                    <td></td>
-                    <td></td>		
-                    <td></td>
-                    <!-- quarto F -->
-                    <td></td>		
-                    <td></td>
-                    <td></td>		
-                    <td></td>
+                    <% for(int i=73; i <= 96; i++) { %>
+                    <c:set var="i" value="<%=i%>"/>
+                    <td>
+                        <c:forEach var="row" items="${result.rows}">  
+                        <c:choose>
+                            <c:when test = "${row.id_qt eq i}">
+                            nome:<c:out value="${row.nome}"/>
+                            </c:when>
+                        </c:choose>
+                        </c:forEach>
+                    </td>
+                    <% } %>
                 </tr>
                 <tr>
                     <td rowspan="2">3</td>
@@ -303,36 +258,18 @@
                 </tr>
                 <tr>
                     <td>Paciente</td>
-                    <!-- quarto A -->
-                    <td></td>		
-                    <td></td>
-                    <td></td>		
-                    <td></td>
-                    <!-- quarto B -->
-                    <td></td>		
-                    <td></td>
-                    <td></td>		
-                    <td></td>
-                    <!-- quarto C -->
-                    <td></td>		
-                    <td></td>
-                    <td></td>		
-                    <td></td>
-                    <!-- quarto D -->
-                    <td></td>		
-                    <td></td>
-                    <td></td>		
-                    <td></td>
-                    <!-- quarto E -->
-                    <td></td>		
-                    <td></td>
-                    <td></td>		
-                    <td></td>
-                    <!-- quarto F -->
-                    <td></td>		
-                    <td></td>
-                    <td></td>		
-                    <td></td>
+                    <% for(int i=49; i <= 72; i++) { %>
+                    <c:set var="i" value="<%=i%>"/>
+                    <td>
+                        <c:forEach var="row" items="${result.rows}">  
+                        <c:choose>
+                            <c:when test = "${row.id_qt eq i}">
+                            nome:<c:out value="${row.nome}"/>
+                            </c:when>
+                        </c:choose>
+                        </c:forEach>
+                    </td>
+                    <% } %>
                 </tr>
                 <tr>
                     <td rowspan="2">2</td>
@@ -370,36 +307,18 @@
                 </tr>
                 <tr>
                     <td>Paciente</td>
-                    <!-- quarto A -->
-                    <td></td>		
-                    <td></td>
-                    <td></td>		
-                    <td></td>
-                    <!-- quarto B -->
-                    <td></td>		
-                    <td></td>
-                    <td></td>		
-                    <td></td>
-                    <!-- quarto C -->
-                    <td></td>		
-                    <td></td>
-                    <td></td>		
-                    <td></td>
-                    <!-- quarto D -->
-                    <td></td>		
-                    <td></td>
-                    <td></td>		
-                    <td></td>
-                    <!-- quarto E -->
-                    <td></td>		
-                    <td></td>
-                    <td></td>		
-                    <td></td>
-                    <!-- quarto F -->
-                    <td></td>		
-                    <td></td>
-                    <td></td>		
-                    <td></td>
+                    <% for(int i=25; i <= 48; i++) { %>
+                    <c:set var="i" value="<%=i%>"/>
+                    <td>
+                        <c:forEach var="row" items="${result.rows}">  
+                        <c:choose>
+                            <c:when test = "${row.id_qt eq i}">
+                            nome:<c:out value="${row.nome}"/>
+                            </c:when>
+                        </c:choose>
+                        </c:forEach>
+                    </td>
+                    <% } %>
                 </tr>
                 <tr>
                     <td rowspan="2">1</td>
@@ -437,36 +356,19 @@
                 </tr>
                 <tr>
                     <td>Paciente</td>
-                    <!-- quarto A -->
-                    <td></td>		
-                    <td></td>
-                    <td></td>		
-                    <td></td>
-                    <!-- quarto B -->
-                    <td></td>		
-                    <td></td>
-                    <td></td>		
-                    <td></td>
-                    <!-- quarto C -->
-                    <td></td>		
-                    <td></td>
-                    <td></td>		
-                    <td></td>
-                    <!-- quarto D -->
-                    <td></td>		
-                    <td></td>
-                    <td></td>		
-                    <td></td>
-                    <!-- quarto E -->
-                    <td></td>		
-                    <td></td>
-                    <td></td>		
-                    <td></td>
-                    <!-- quarto F -->
-                    <td></td>		
-                    <td></td>
-                    <td></td>		
-                    <td></td>
+                    <% for(int i=1; i <= 24; i++) { %>
+                    <c:set var="i" value="<%=i%>"/>
+                    <td>
+                        <c:forEach var="row" items="${result.rows}">  
+                        <c:choose>
+                            <c:when test = "${row.id_qt eq i}">
+                            nome:<c:out value="${row.nome}"/>
+                            </c:when>
+                        </c:choose>
+                        </c:forEach>
+                    </td>
+                    <% } %>
+                    
                 </tr>
             </table>
         

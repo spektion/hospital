@@ -5,19 +5,15 @@
  */
 package beans;
 
-import java.io.File;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Marshaller;
-
+import java.sql.*;
 /**
  *
  * @author Spek
@@ -40,21 +36,31 @@ public class CrtPaciente extends HttpServlet {
         
         try (PrintWriter out = response.getWriter()) {
             
-            Paciente pac = new Paciente();
-            pac.setId(1);
-            pac.setNome(request.getParameter("nome"));
-            int idd = Integer.parseInt(request.getParameter("idade"));
-            pac.setIdade(idd);
-            pac.setDoenca(request.getParameter("doenca"));
-            int nvis = Integer.parseInt(request.getParameter("nvisitas"));
-            pac.setVisitNum(nvis);
-            boolean vis = Boolean.parseBoolean(request.getParameter("nvisitas"));
-            pac.setVisitas(vis);  
+            String JDBC_DRIVER="com.mysql.jdbc.Driver";
+            String DB_URL="jdbc:mysql://localhost:3306/hospital";
+            String USER = "root";
+            String PASS = "root";
             
- 
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conn = DriverManager.getConnection(DB_URL,USER,PASS);
+            
+            int idd = Integer.parseInt(request.getParameter("idade"));
+            int idqt = Integer.parseInt(request.getParameter("quarto"));
+            int nvis = Integer.parseInt(request.getParameter("nvisitas"));
+            boolean vis = Boolean.parseBoolean(request.getParameter("nvisitas"));
+            
+            Statement stmt = conn.createStatement();
+            stmt.executeUpdate("insert into Pacientes(nome,idade,doenca,id_qt,visitNum,visit,alta) VALUES ('"+request.getParameter("nome")+"',"+idd+",'"+request.getParameter("doenca")+"',"+idqt+","+nvis+","+vis+",false);");
+          
+            
+            stmt.close();
+            conn.close();
+            
             RequestDispatcher rd = request.getRequestDispatcher("Home");
             rd.forward(request, response);
-	} 
+	} catch (Exception ex) {
+            ex.printStackTrace();
+        } 
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -5,6 +5,10 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page import="java.io.*,java.util.*,java.sql.*"%>
+<%@ page import="javax.servlet.http.*,javax.servlet.*" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -42,10 +46,22 @@
         </div>
         <div id="content">
             <jsp:useBean id="CrtPaciente" class="beans.CrtPaciente" scope="session"/>
-            <form method="post" action="CrtUser">
+            <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost:3306/hospital" user="root"  password="root"/>
+ 
+            <sql:query dataSource="${snapshot}" var="result">
+                SELECT * FROM Quarto WHERE id_qt NOT IN (SELECT id_qt FROM Pacientes);
+            </sql:query>
+            <form method="post" action="CrtPaciente">
                 <p>Nome: <input type="text" name="nome" size="16"/>   
                    idade: <input type="number" name="idade" size="6"/>
                    doença: <input type="text" name="doenca" size="16"/>
+      
+                <p>Quarto:    <select name="quarto">
+                        <c:forEach var="row" items="${result.rows}">
+                            
+                            <option value="${row.id_qt}">andar:<c:out value="${row.andar}"/>,porta:<c:out value="${row.porta}"/>,cama:<c:out value="${row.cama}"/></option>
+                        </c:forEach>
+                        </select>
                 <p>numero de visitas:    <select name="nvisitas">
                         <option value="0">0</option>
                         <option value="2">2</option>

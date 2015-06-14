@@ -24,6 +24,7 @@
             <li><a href="AddUser">Novo User</a></li>
             <li><a href="Contactos">Contactos</a></li>
             <li><a href="Acerca">Acerca</a></li>
+            <li><a href="Logout">Logout</a></li>
             </ul>
         </div>
         <div id="content">
