@@ -39,7 +39,7 @@
                      <%}else if(tipo.toString().equals("enf")){%>
                         <li><a href="Home">Home</a></li>
                         <li><a href="AddPaciente">Novo paciente</a></li>
-                        <li><!--<a href="AddUser">-->Alta paciente<!--</a>--></li>
+                        <li><a href="AltaPaciente">Alta paciente</a></li>
                         <li><a href="Contactos">Contactos</a></li>
                         <li><a href="Acerca">Acerca</a></li>
                         <li><a href="Logout">Logout</a></li>
@@ -62,7 +62,7 @@
             <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost:3306/hospital" user="root"  password="root"/>
  
             <sql:query dataSource="${snapshot}" var="result">
-                SELECT * FROM Pacientes;
+                select * from Pacientes where alta=0;
             </sql:query>
             <p></p>
             <table class="center" id="t01">

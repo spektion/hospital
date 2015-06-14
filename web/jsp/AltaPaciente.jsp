@@ -1,6 +1,6 @@
 <%-- 
-    Document   : AddPaciente
-    Created on : Jun 14, 2015, 1:07:25 PM
+    Document   : AltaPaciente
+    Created on : Jun 14, 2015, 8:49:22 PM
     Author     : Spek
 --%>
 
@@ -13,7 +13,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Novo Paciente</title>
+        <title>Alta Paciente</title>
         <link rel="stylesheet" type="text/css" href="css/webstyle.css">
     </head>
     <body>
@@ -45,33 +45,22 @@
             </ul>
         </div>
         <div id="content">
-            <jsp:useBean id="CrtPaciente" class="beans.CrtPaciente" scope="session"/>
+            <jsp:useBean id="DisablePaciente" class="beans.DisablePaciente" scope="session"/>
             <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost:3306/hospital" user="root"  password="root"/>
  
             <sql:query dataSource="${snapshot}" var="result">
-                SELECT * FROM Quarto WHERE id_qt NOT IN (SELECT id_qt FROM Pacientes where alta=0);
+                select * from Pacientes where alta=0;
             </sql:query>
-            <form method="post" action="CrtPaciente">
-                <p>Nome: <input type="text" name="nome" size="16"/>   
-                   idade: <input type="number" name="idade" size="6"/>
-                   doença: <input type="text" name="doenca" size="16"/>
-      
-                <p>Quarto:    <select name="quarto">
+            <form method="post" action="DisablePaciente">
+                
+                <p>Paciente a dar alta   <select name="paciente">
                         <c:forEach var="row" items="${result.rows}">
                             
-                            <option value="${row.id_qt}">andar:<c:out value="${row.andar}"/>,porta:<c:out value="${row.porta}"/>,cama:<c:out value="${row.cama}"/></option>
+                            <option value="${row.id_pac}">nome:<c:out value="${row.nome}"/></option>
                         </c:forEach>
                         </select>
-                <p>numero de visitas:    <select name="nvisitas">
-                        <option value="0">0</option>
-                        <option value="2">2</option>
-                        <option value="4">4</option>
-                    </select> 
-                    <p>pode ter visitas:    <select name="visita">
-                        <option value="true">sim</option>
-                        <option value="false">não</option>
-                    </select> 
-                    <input type="submit" value="Criar"/>
+                 
+                    <input type="submit" value="Alta"/>
             </form>
         
         

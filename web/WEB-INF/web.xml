@@ -17,6 +17,10 @@
         <jsp-file>/jsp/Logout.jsp</jsp-file>
     </servlet>
     <servlet>
+        <servlet-name>AltaPaciente</servlet-name>
+        <jsp-file>/jsp/AltaPaciente.jsp</jsp-file>
+    </servlet>
+    <servlet>
         <servlet-name>Acerca</servlet-name>
         <jsp-file>/jsp/Acerca.jsp</jsp-file>
     </servlet>
@@ -35,6 +39,10 @@
     <servlet>
         <servlet-name>CrtPaciente</servlet-name>
         <servlet-class>beans.CrtPaciente</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DisablePaciente</servlet-name>
+        <servlet-class>beans.DisablePaciente</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>LoginApp</servlet-name>
@@ -57,6 +65,10 @@
         <url-pattern>/AddUser/*</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+        <servlet-name>AltaPaciente</servlet-name>
+        <url-pattern>/AltaPaciente/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>AddPaciente</servlet-name>
         <url-pattern>/AddPaciente/*</url-pattern>
     </servlet-mapping>
@@ -71,6 +83,10 @@
     <servlet-mapping>
         <servlet-name>CrtPaciente</servlet-name>
         <url-pattern>/CrtPaciente</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DisablePaciente</servlet-name>
+        <url-pattern>/DisablePaciente</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

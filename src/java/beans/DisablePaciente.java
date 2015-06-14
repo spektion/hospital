@@ -5,20 +5,20 @@
  */
 package beans;
 
-
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.*;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.sql.*;
+
 /**
  *
  * @author Spek
  */
-public class CrtPaciente extends HttpServlet {
+public class DisablePaciente extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,10 +32,8 @@ public class CrtPaciente extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
-        
         try (PrintWriter out = response.getWriter()) {
-           
+            
             String DB_URL="jdbc:mysql://localhost:3306/hospital";
             String USER = "root";
             String PASS = "root";
@@ -43,13 +41,11 @@ public class CrtPaciente extends HttpServlet {
             Class.forName("com.mysql.jdbc.Driver");
             Connection conn = DriverManager.getConnection(DB_URL,USER,PASS);
             
-            int idd = Integer.parseInt(request.getParameter("idade"));
-            int idqt = Integer.parseInt(request.getParameter("quarto"));
-            int nvis = Integer.parseInt(request.getParameter("nvisitas"));
-            boolean vis = Boolean.parseBoolean(request.getParameter("visita"));
+            int id = Integer.parseInt(request.getParameter("paciente"));
+            
 
             Statement stmt = conn.createStatement();
-            stmt.executeUpdate("insert into Pacientes(nome,idade,doenca,id_qt,visitNum,visit,alta) VALUES ('"+request.getParameter("nome")+"',"+idd+",'"+request.getParameter("doenca")+"',"+idqt+","+nvis+","+vis+",false);");
+            stmt.executeUpdate("UPDATE Pacientes SET alta=1 WHERE id_pac="+id+";");
           
             
             stmt.close();
@@ -57,7 +53,7 @@ public class CrtPaciente extends HttpServlet {
             
             RequestDispatcher rd = request.getRequestDispatcher("Home");
             rd.forward(request, response);
-	} catch (Exception ex) {
+        }catch (Exception ex) {
             ex.printStackTrace();
         } 
     }
