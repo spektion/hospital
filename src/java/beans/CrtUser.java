@@ -53,6 +53,7 @@ public class CrtUser extends HttpServlet {
             File file = new File(path+"/users/"+request.getParameter("id")+"user.xml");
             JAXBContext jaxbContext = JAXBContext.newInstance(User.class);
             Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
+            
  
 		// output pretty printed
 	
@@ -61,7 +62,6 @@ public class CrtUser extends HttpServlet {
             jaxbMarshaller.marshal(user, file);
             jaxbMarshaller.marshal(user, System.out);
  
-            out.println("<h1>Utilizador criado</h1>");
             RequestDispatcher rd = request.getRequestDispatcher("Home");
             rd.forward(request, response);
 	} catch (JAXBException e) {

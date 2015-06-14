@@ -5,20 +5,24 @@
  */
 package beans;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
 
 /**
  *
  * @author Spek
  */
-public class Session extends HttpServlet {
+public class CrtPaciente extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,14 +37,24 @@ public class Session extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         
-        HttpSession session=request.getSession(false);
         
         try (PrintWriter out = response.getWriter()) {
-            if(session!=null){
-                RequestDispatcher rd = request.getRequestDispatcher("Home");
-                rd.forward(request, response);
-            }
-        }
+            
+            Paciente pac = new Paciente();
+            pac.setId(1);
+            pac.setNome(request.getParameter("nome"));
+            int idd = Integer.parseInt(request.getParameter("idade"));
+            pac.setIdade(idd);
+            pac.setDoenca(request.getParameter("doenca"));
+            int nvis = Integer.parseInt(request.getParameter("nvisitas"));
+            pac.setVisitNum(nvis);
+            boolean vis = Boolean.parseBoolean(request.getParameter("nvisitas"));
+            pac.setVisitas(vis);  
+            
+ 
+            RequestDispatcher rd = request.getRequestDispatcher("Home");
+            rd.forward(request, response);
+	} 
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

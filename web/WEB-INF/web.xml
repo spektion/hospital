@@ -29,12 +29,16 @@
         <jsp-file>/jsp/AddUser.jsp</jsp-file>
     </servlet>
     <servlet>
+        <servlet-name>AddPaciente</servlet-name>
+        <jsp-file>/jsp/AddPaciente.jsp</jsp-file>
+    </servlet>
+    <servlet>
         <servlet-name>LstQuartos</servlet-name>
         <servlet-class>beans.LstQuartos</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>Session</servlet-name>
-        <servlet-class>beans.Session</servlet-class>
+        <servlet-name>CrtPaciente</servlet-name>
+        <servlet-class>beans.CrtPaciente</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>LoginApp</servlet-name>
@@ -57,6 +61,10 @@
         <url-pattern>/AddUser/*</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+        <servlet-name>AddPaciente</servlet-name>
+        <url-pattern>/AddPaciente/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>Home</servlet-name>
         <url-pattern>/Home/*</url-pattern>
     </servlet-mapping>
@@ -69,8 +77,8 @@
         <url-pattern>/LstQuartos</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>Session</servlet-name>
-        <url-pattern>/Session</url-pattern>
+        <servlet-name>CrtPaciente</servlet-name>
+        <url-pattern>/CrtPaciente</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

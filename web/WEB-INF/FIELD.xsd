@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+    
+        <xsd:element name="Paciente" type="Paciente"/>
+        <xsd:complexType name="Paciente">
+            <xsd:sequence>
+                <xsd:element name="id" type="xsd:int" minOccurs="0"/>
+                <xsd:element name="nome" type="xsd:string" minOccurs="0"/>
+                <xsd:element name="idade" type="xsd:int" minOccurs="0"/>
+                <xsd:element name="doenca" type="xsd:string" minOccurs="0"/>
+                <xsd:element name="visitNum" type="xsd:int" minOccurs="0"/>
+                <xsd:element name="visita" type="xsd:boolean" minOccurs="0"/>
+            </xsd:sequence>
+                <xsd:choice>
+                    <xsd:element name="quarto" type="quarto"/>
+                </xsd:choice>
+            </xsd:sequence>
+        </xsd:complexType>
+        <xsd:complexType name="quarto">
+            <xsd:sequence>
+                <xsd:element name="andar" type="xsd:int" minOccurs="0"/>
+                <xsd:element name="porta" type="xsd:string" minOccurs="0"/>
+                <xsd:element name="cama" type="xsd:string" minOccurs="0"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:schema>
+</xs:schema>

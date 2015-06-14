@@ -34,7 +34,7 @@
                         <li><a href="Logout">Logout</a></li>
                      <%}else if(tipo.toString().equals("enf")){%>
                         <li><a href="Home">Home</a></li>
-                        <li><!--<a href="AddUser">-->Novo paciente<!--</a>--></li>
+                        <li><a href="AddPaciente">Novo paciente</a></li>
                         <li><!--<a href="AddUser">-->Alta paciente<!--</a>--></li>
                         <li><a href="Contactos">Contactos</a></li>
                         <li><a href="Acerca">Acerca</a></li>

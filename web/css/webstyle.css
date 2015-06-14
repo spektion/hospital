@@ -37,7 +37,7 @@ header {
     font-family: Tahoma, Geneva, sans-serif;
     font-weight: bold;
     text-align: center;
-    text-decoration-color: #FFF;
+    color: #FFF;
     text-shadow: 3px 2px 3px #333333;
     background-color: #98AFC7;
    
@@ -45,11 +45,11 @@ header {
 }
 #menu a {
     text-decoration: none;
-    color: #000;
+    color: #FFF;
     padding: 8px 8px 8px 8px;
 }
 #menu a:hover {
-    color: #566D7E;
+    color: #BCC6CC;
     background-color: #6D7B8D;
 }
 #content{

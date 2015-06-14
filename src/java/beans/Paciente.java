@@ -9,16 +9,19 @@ package beans;
  *
  * @author Spek
  */
+import javax.xml.bind.annotation.*;
+ 
 public class Paciente {
     
     private int id;
     private String nome;
     private int idade;
     private String doenca;
-    private Quarto quarto;
     private int visitNum;
     private boolean visitas;
-
+    private boolean alta;
+    private int id_qt;
+    
     /**
      * @return the id
      */
@@ -29,6 +32,7 @@ public class Paciente {
     /**
      * @param id the id to set
      */
+    
     public void setId(int id) {
         this.id = id;
     }
@@ -43,6 +47,7 @@ public class Paciente {
     /**
      * @param nome the nome to set
      */
+    
     public void setNome(String nome) {
         this.nome = nome;
     }
@@ -57,6 +62,7 @@ public class Paciente {
     /**
      * @param idade the idade to set
      */
+    
     public void setIdade(int idade) {
         this.idade = idade;
     }
@@ -71,22 +77,9 @@ public class Paciente {
     /**
      * @param doenca the doenca to set
      */
+   
     public void setDoenca(String doenca) {
         this.doenca = doenca;
-    }
-
-    /**
-     * @return the quarto
-     */
-    public Quarto getQuarto() {
-        return quarto;
-    }
-
-    /**
-     * @param quarto the quarto to set
-     */
-    public void setQuarto(Quarto quarto) {
-        this.quarto = quarto;
     }
 
     /**
@@ -99,6 +92,7 @@ public class Paciente {
     /**
      * @param visitNum the visitNum to set
      */
+    
     public void setVisitNum(int visitNum) {
         this.visitNum = visitNum;
     }
@@ -113,9 +107,39 @@ public class Paciente {
     /**
      * @param visitas the visitas to set
      */
+    
     public void setVisitas(boolean visitas) {
         this.visitas = visitas;
     }
+
+    /**
+     * @return the alta
+     */
+    public boolean isAlta() {
+        return alta;
+    }
+
+    /**
+     * @param alta the alta to set
+     */
+    public void setAlta(boolean alta) {
+        this.alta = alta;
+    }
+
+    /**
+     * @return the id_qt
+     */
+    public int getId_qt() {
+        return id_qt;
+    }
+
+    /**
+     * @param id_qt the id_qt to set
+     */
+    public void setId_qt(int id_qt) {
+        this.id_qt = id_qt;
+    }
+
     
     
             
