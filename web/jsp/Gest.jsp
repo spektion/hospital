@@ -45,8 +45,8 @@
                         <li><a href="Logout">Logout</a></li>
                         <%}else if(tipo.toString().equals("recep")){%>
                         <li><a href="Home">Home</a></li>
-                        <li><!--<a href="AddUser">-->Nova visita<!--</a>--></li>
-                        <li><!--<a href="AddUser">-->Saida visita<!--</a>--></li>
+                        <li><a href="AddVisita">Nova visita</a></li>
+                        <li><a href="RmVisita">Saida visita</a></li>
                         <li><a href="Contactos">Contactos</a></li>
                         <li><a href="Acerca">Acerca</a></li>
                         <li><a href="Logout">Logout</a></li>
@@ -62,7 +62,7 @@
             <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost:3306/hospital" user="root"  password="root"/>
  
             <sql:query dataSource="${snapshot}" var="result">
-                select * from Pacientes where alta=0;
+                select distinct p.nome,p.idade,p.doenca,p.id_qt,p.visitNum,(select count(*) from Visita where p.id_pac = id_pac) as actVis from Pacientes p where p.alta=0;
             </sql:query>
             <p></p>
             <table class="center" id="t01">
@@ -118,6 +118,10 @@
                         <c:choose>
                             <c:when test = "${row.id_qt eq i}">
                             nome:<c:out value="${row.nome}"/>
+                            <p>idade:<c:out value="${row.idade}"/>
+                            <p>doenca:<c:out value="${row.doenca}"/>
+                            <p>Num. Visitas:<c:out value="${row.visitNum}"/>
+                            <p>Visitas em curso:<c:out value="${row.actVis}"/>
                             </c:when>
                         </c:choose>
                         </c:forEach>
@@ -167,6 +171,10 @@
                         <c:choose>
                             <c:when test = "${row.id_qt eq i}">
                             nome:<c:out value="${row.nome}"/>
+                            <p>idade:<c:out value="${row.idade}"/>
+                            <p>doenca:<c:out value="${row.doenca}"/>
+                            <p>Num. Visitas:<c:out value="${row.visitNum}"/>
+                                <p>Visitas em curso:<c:out value="${row.actVis}"/>
                             </c:when>
                         </c:choose>
                         </c:forEach>
@@ -216,6 +224,10 @@
                         <c:choose>
                             <c:when test = "${row.id_qt eq i}">
                             nome:<c:out value="${row.nome}"/>
+                            <p>idade:<c:out value="${row.idade}"/>
+                            <p>doenca:<c:out value="${row.doenca}"/>
+                            <p>Num. Visitas:<c:out value="${row.visitNum}"/>
+                            <p>Visitas em curso:<c:out value="${row.actVis}"/>
                             </c:when>
                         </c:choose>
                         </c:forEach>
@@ -265,6 +277,10 @@
                         <c:choose>
                             <c:when test = "${row.id_qt eq i}">
                             nome:<c:out value="${row.nome}"/>
+                            <p>idade:<c:out value="${row.idade}"/>
+                            <p>doenca:<c:out value="${row.doenca}"/>
+                            <p>Num. Visitas:<c:out value="${row.visitNum}"/>
+                            <p>Visitas em curso:<c:out value="${row.actVis}"/>
                             </c:when>
                         </c:choose>
                         </c:forEach>
@@ -314,6 +330,10 @@
                         <c:choose>
                             <c:when test = "${row.id_qt eq i}">
                             nome:<c:out value="${row.nome}"/>
+                            <p>idade:<c:out value="${row.idade}"/>
+                            <p>doenca:<c:out value="${row.doenca}"/>
+                            <p>Num. Visitas:<c:out value="${row.visitNum}"/>
+                            <p>Visitas em curso:<c:out value="${row.actVis}"/>
                             </c:when>
                         </c:choose>
                         </c:forEach>
@@ -363,6 +383,10 @@
                         <c:choose>
                             <c:when test = "${row.id_qt eq i}">
                             nome:<c:out value="${row.nome}"/>
+                            <p>idade:<c:out value="${row.idade}"/>
+                            <p>doenca:<c:out value="${row.doenca}"/>
+                            <p>Num. Visitas:<c:out value="${row.visitNum}"/>
+                            <p>Visitas em curso:<c:out value="${row.actVis}"/>
                             </c:when>
                         </c:choose>
                         </c:forEach>

@@ -9,7 +9,6 @@ package beans;
  *
  * @author Spek
  */
-import javax.xml.bind.annotation.*;
  
 public class Paciente {
     

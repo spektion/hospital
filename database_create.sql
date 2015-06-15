@@ -1,4 +1,6 @@
+drop database hospital;
 create database hospital;
+use hospital;
 
 create table Quarto
     (
@@ -21,14 +23,15 @@ create table Pacientes
      PRIMARY KEY (id_pac),
      FOREIGN KEY (id_qt) REFERENCES Quarto(id_qt)
     );
-
-create table Visita
+    
+    create table Visita
     (
      id_vis int not null AUTO_INCREMENT,
      nome varchar (255),
      idade int not null,
      cc int not null,
      tel int not null,
+     visita boolean,
      id_pac int not null,
      PRIMARY KEY (id_vis),
      FOREIGN KEY (id_pac) REFERENCES Pacientes(id_pac)
@@ -185,4 +188,11 @@ create table Visita
    INSERT INTO Quarto (andar, porta, cama) VALUES (6,'F','IV');
    
    insert into Pacientes(nome,idade,doenca,id_qt,visitNum,visit,alta) VALUES ('gfaria',40,'fungos nas unhas',10,4,true,false);
-   insert into Pacientes(nome,idade,doenca,id_qt,visitNum,visit,alta) VALUES ('juvenal',20,'hemoroidas',48,4,true,false);
+   insert into Pacientes(nome,idade,doenca,id_qt,visitNum,visit,alta) VALUES ('angelo',40,'gastroentrite',48,4,true,false);
+   insert into Pacientes(nome,idade,doenca,id_qt,visitNum,visit,alta) VALUES ('gfaria',40,'fungos nas unhas',49,4,true,true);
+   
+   insert into Visita(nome,idade,cc,tel,id_pac,visita) VALUES ('diogo',40,10001000,912223344,2,1);
+   insert into Visita(nome,idade,cc,tel,id_pac,visita) VALUES ('maria',40,10001000,912223344,2,1);
+   insert into Visita(nome,idade,cc,tel,id_pac,visita) VALUES ('antonio',40,10001000,912223344,2,1);
+   insert into Visita(nome,idade,cc,tel,id_pac,visita) VALUES ('arnaldo',40,10001000,912223344,1,1);
+   insert into Visita(nome,idade,cc,tel,id_pac,visita) VALUES ('filipa',40,10001000,912223344,1,1);

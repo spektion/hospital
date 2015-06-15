@@ -21,6 +21,14 @@
         <jsp-file>/jsp/AltaPaciente.jsp</jsp-file>
     </servlet>
     <servlet>
+        <servlet-name>AddVisita</servlet-name>
+        <jsp-file>/jsp/AddVisita.jsp</jsp-file>
+    </servlet>
+    <servlet>
+        <servlet-name>RmVisita</servlet-name>
+        <jsp-file>/jsp/RmVisita.jsp</jsp-file>
+    </servlet>
+    <servlet>
         <servlet-name>Acerca</servlet-name>
         <jsp-file>/jsp/Acerca.jsp</jsp-file>
     </servlet>
@@ -43,6 +51,14 @@
     <servlet>
         <servlet-name>DisablePaciente</servlet-name>
         <servlet-class>beans.DisablePaciente</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DisableVisita</servlet-name>
+        <servlet-class>beans.DisableVisita</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CrtVisita</servlet-name>
+        <servlet-class>beans.CrtVisita</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>LoginApp</servlet-name>
@@ -73,6 +89,14 @@
         <url-pattern>/AddPaciente/*</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+        <servlet-name>AddVisita</servlet-name>
+        <url-pattern>/AddVisita/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RmVisita</servlet-name>
+        <url-pattern>/RmVisita/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>Home</servlet-name>
         <url-pattern>/Home/*</url-pattern>
     </servlet-mapping>
@@ -87,6 +111,14 @@
     <servlet-mapping>
         <servlet-name>DisablePaciente</servlet-name>
         <url-pattern>/DisablePaciente</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DisableVisita</servlet-name>
+        <url-pattern>/DisableVisita</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CrtVisita</servlet-name>
+        <url-pattern>/CrtVisita</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
