@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.sql.*;
+import javax.servlet.http.HttpSession;
 /**
  *
  * @author Spek
@@ -33,7 +34,7 @@ public class CrtPaciente extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         
-        
+       
         try (PrintWriter out = response.getWriter()) {
            
             String DB_URL="jdbc:mysql://localhost:3306/hospital";
@@ -57,9 +58,10 @@ public class CrtPaciente extends HttpServlet {
             
             RequestDispatcher rd = request.getRequestDispatcher("Home");
             rd.forward(request, response);
+            
 	} catch (Exception ex) {
             ex.printStackTrace();
-        } 
+         }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

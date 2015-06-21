@@ -44,15 +44,20 @@ public class LoginApp extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             
                 File file = new File(path+"/users/"+request.getParameter("id")+"user.xml");
+                File DBfile = new File(path+"/DBconfig.xml");
                 if(!file.isFile()){
                     RequestDispatcher rd = request.getRequestDispatcher("/jsp/LoginError.jsp");
                     rd.include(request, response);
                 }
                 JAXBContext jaxbContext = JAXBContext.newInstance(User.class);
+                JAXBContext jaxbDBContext = JAXBContext.newInstance(DBconf.class);
 
                 Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
                 User user = (User) jaxbUnmarshaller.unmarshal(file);
-                //System.out.println(user);
+                
+                Unmarshaller jaxbDBUnmarshaller = jaxbDBContext.createUnmarshaller();
+                DBconf dbconf = (DBconf) jaxbDBUnmarshaller.unmarshal(DBfile);
+                System.out.println(dbconf.getAddress()+" - user: " + dbconf.getUser());
 
                 String user_in = request.getParameter("id");
                 String pwd_in = request.getParameter("pwd");
@@ -60,6 +65,9 @@ public class LoginApp extends HttpServlet {
                     HttpSession session = request.getSession();
                     session.setAttribute("User",user);
                     session.setAttribute("Tipo",user.getTipo());
+                    session.setAttribute("DBurl",dbconf.getAddress());
+                    session.setAttribute("DBuser",dbconf.getUser());
+                    session.setAttribute("DBpwd",dbconf.getPassword());
                     RequestDispatcher rd = request.getRequestDispatcher("Home");
                     rd.forward(request, response);
                 } else {

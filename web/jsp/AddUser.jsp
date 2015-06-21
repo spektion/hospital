@@ -20,11 +20,23 @@
         </header>
         <div id="menu">
             <ul>
-            <li><a href="Home">Home</a></li>
-            <li><a href="AddUser">Novo User</a></li>
-            <li><a href="Contactos">Contactos</a></li>
-            <li><a href="Acerca">Acerca</a></li>
-            <li><a href="Logout">Logout</a></li>
+                <% 
+                    try{
+                    HttpSession sessions = request.getSession();
+                    Object user = sessions.getAttribute("User");
+                    Object tipo = sessions.getAttribute("Tipo");
+                    if(tipo.toString().equals("admin")){  
+                %>
+                        <li><a href="Home">Home</a></li>
+                        <li><a href="Contactos">Contactos</a></li>
+                        <li><a href="Acerca">Acerca</a></li>
+                        <li><a href="Logout">Logout</a></li>
+                <%}else{%>
+                        <jsp:forward page="Errorpage" />
+                <%}
+                    }catch(java.lang.NullPointerException er){%>
+                        <jsp:forward page="hospital" />
+                <%}%>
             </ul>
         </div>
         <div id="content">

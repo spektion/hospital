@@ -13,8 +13,16 @@
         <jsp-file>/jsp/Gest.jsp</jsp-file>
     </servlet>
     <servlet>
+        <servlet-name>Errorpage</servlet-name>
+        <jsp-file>/jsp/Errorpage.jsp</jsp-file>
+    </servlet>
+    <servlet>
         <servlet-name>Logout</servlet-name>
         <jsp-file>/jsp/Logout.jsp</jsp-file>
+    </servlet>
+    <servlet>
+        <servlet-name>hospital</servlet-name>
+        <jsp-file>/jsp/Login.jsp</jsp-file>
     </servlet>
     <servlet>
         <servlet-name>AltaPaciente</servlet-name>
@@ -73,6 +81,10 @@
         <url-pattern>/Acerca/*</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+        <servlet-name>Errorpage</servlet-name>
+        <url-pattern>/Errorpage/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>Contactos</servlet-name>
         <url-pattern>/Contactos/*</url-pattern>
     </servlet-mapping>
@@ -103,6 +115,10 @@
     <servlet-mapping>
         <servlet-name>Logout</servlet-name>
         <url-pattern>/Logout/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>hospital</servlet-name>
+        <url-pattern>/hospital/*</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>CrtPaciente</servlet-name>
